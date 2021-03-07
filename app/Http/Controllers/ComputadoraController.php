@@ -49,7 +49,7 @@ class ComputadoraController extends Controller
      */
     public function show(Computadora $computadora)
     {
-        //
+        return view('computers.show', compact('computadora'));
     }
 
     /**

@@ -49,7 +49,7 @@ class DinosaurController extends Controller
      */
     public function show(Dinosaur $dinosaur)
     {
-        //
+        return view('dinosaurs.show', compact('dinosaur'));
     }
 
     /**
