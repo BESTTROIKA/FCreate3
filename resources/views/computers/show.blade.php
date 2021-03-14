@@ -48,10 +48,14 @@
     </div>
         <div class="carfoster">
             <div class="col">
-                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                <a class="btn btn-primary" href="{{route('computadoras.edit', $computadora->id)}}">Editar</a>      
-                                <a class="btn btn-danger" href="{{route('computadoras.destroy', $computadora->id)}}">Eliminar</a>      
-                            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a class="btn btn-primary" href="{{route('computadoras.edit', $computadora->id)}}">Editar</a>
+
+                            <form action="{{route('computadoras.destroy', $computadora->id)}}" method="post">
+                                @csrf 
+                                @method('DELETE')
+                                <input class="btn btn-danger" type="submit" value="Eliminar">
+                            </form>                                  
                         </div>
             </div>
     </div>

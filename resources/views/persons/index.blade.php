@@ -23,7 +23,7 @@
             <th>Nombre</th>
             <th>Información</th>
             <th>Descripción</th>
-            <th>Acciones</th>
+            
         </tr>
     </thead>
     <tbody>
@@ -43,7 +43,6 @@
             <p><b>Nacionalidad:</b>{{$person->nacionality}}</p>
             <p><b>Residencia:</b>{{$person->residence}}</p>
             </td>
-            <td>Ver | Editar | Eliminar</td>
         
         @empty
             <h1>La tabla no tiene datos</h1>

@@ -24,7 +24,7 @@
             <th>Vehiculo</th>
             <th>Información</th>
             <th>Descripción</th>
-            <th>Acciones</th>
+          
         </tr>
     </thead>
     <tbody>
@@ -43,7 +43,7 @@
 
             </td>
             <td><p>{{$vehicle->description}}</p></td>
-            <td>Ver | Editar | Eliminar</td>
+           
         
         @empty
             <h1>La tabla no tiene datos</h1>

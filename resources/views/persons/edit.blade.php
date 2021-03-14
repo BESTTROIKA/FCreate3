@@ -3,44 +3,49 @@
 <div>
     <h1>Datos de una Persona</h1>
 
-    <form action="{{route('persons.store')}}" method="post">
+    <form action="{{route('persons.update', $person->id)}}" method="post">
 
     @csrf
+    @method('PUT')
     <div class="row">
         <div class="col-xs-12 col-sm-4 col-md-4 col-xl-4">
             <label for="">Nombre:</label>
-            <input class="form-control" type="text" name="name" placeholder="Nombre(s)">
+            <input class="form-control" type="text" name="name" value="{{$person->name}}">
         </div>
         <div class="col-xs-12 col-sm-4 col-md-4 col-xl-4">
             <label for="">Apellidos:</label>
-            <input class="form-control" type="text" name="surname" placeholder="Apellidos">
+            <input class="form-control" type="text" name="surname" value="{{$person->surname}}">
         </div>
         <div class="col-xs-12 col-sm-4 col-md-4 col-xl-4">
             <label for="">Edad</label>
-            <input class="form-control" type="number" name="age" placeholder="Edad">
+            <input class="form-control" type="number" name="age" value="{{$person->age}}">
         </div>
         <div class="col-xs-12 col-sm-4 col-md-4 col-xl-4">
             <label for="">Género:</label>
-            <input class="form-control" type="text" name="gender" placeholder="(Femenino/Masculino)">
+            <input class="form-control" type="text" name="gender" value="{{$person->gender}}">
         </div>
         <div class="col-xs-12 col-sm-4 col-md-4 col-xl-4">
             <label for="">Peso:</label>
-            <input class="form-control" type="number" name="weight" placeholder="Peso">
+            <input class="form-control" type="number" name="weight" value="{{$person->weight}}">
         </div>
         <div class="row">
         <div class="col-xs-12 col-sm-4 col-md-4 col-xl-4">
             <label for="">Altura:</label>
-            <input class="form-control" type="number" name="height" placeholder="Estatura">
+            <input class="form-control" type="number" name="height" value="{{$person->height}}">
         </div>
         <div class="col-xs-12 col-sm-4 col-md-4 col-xl-4">
             <label for="">Nacionalidad:</label>
-            <input class="form-control" type="text" name="nacionality" placeholder="Nacionalidad">
+            <input class="form-control" type="text" name="nacionality" value="{{$person->nacionality}}">
         </div>
         <div class="col-xs-12 col-sm-4 col-md-4 col-xl-4">
             <label for="">Residencia:</label>
-            <input class="form-control" type="text" name="residence" placeholder="Lugar de Residencia">
+            <input class="form-control" type="text" name="residence" value="{{$person->residence}}">
         </div>
 
-        <input class="btn btn-primary" type="submit" value="Guardar Datos">
+        <br>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <input class="btn btn-info" type="reset" value="Restablecer">
+            <input class="btn btn-primary" type="submit" value="Actualizar">
+        </div>
     </form>
 </div>

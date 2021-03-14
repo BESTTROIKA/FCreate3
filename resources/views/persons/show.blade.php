@@ -44,10 +44,14 @@
     </div>
         <div class="carfoster">
             <div class="col">
-                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                <a class="btn btn-primary" href="{{route('persons.edit', $person->id)}}">Editar</a>      
-                                <a class="btn btn-danger" href="{{route('persons.destroy', $person->id)}}">Eliminar</a>      
-                            </div>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a class="btn btn-primary" href="{{route('persons.edit', $person->id)}}">Editar</a>
+
+                            <form action="{{route('persons.destroy', $person->id)}}" method="post">
+                                @csrf 
+                                @method('DELETE')
+                                <input class="btn btn-danger" type="submit" value="Eliminar">
+                            </form>                                  
                         </div>
             </div>
     </div>

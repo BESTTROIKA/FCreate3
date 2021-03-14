@@ -23,7 +23,7 @@
             <th>Nombre</th>
             <th>Información</th>
             <th>Descripción</th>
-            <th>Acciones</th>
+           
         </tr>
     </thead>
     <tbody>
@@ -43,8 +43,7 @@
             <p><b>RAM:</b>{{$computadora->Memory}} GB</p>
             <p><b>Procesador:</b>{{$computadora->processor}} {{$computadora->core}} núcleos</p>
             </td>
-            <td>Ver | Editar | Eliminar</td>
-        
+           
         @empty
             <h1>La tabla no tiene datos</h1>
             </tr>

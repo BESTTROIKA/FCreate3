@@ -24,7 +24,7 @@
             <th>Dinosaurio</th>
             <th>Información</th>
             <th>Descripción</th>
-            <th>Acciones</th>
+           
         </tr>
     </thead>
     <tbody>
@@ -35,7 +35,7 @@
                     <h4>{{$dinosaur->name}} {{$dinosaur->clasification}}</h3></td>
                 </a> 
             <td>
-                <p><b>Peso:</b>{{$dinosaur->wieght}}</p>
+                <p><b>Peso:</b>{{$dinosaur->weight}}</p>
                 <p><b>Tamaño:</b>{{$dinosaur->size}} Metros</p>
                 <p><b>Habitad:</b>{{$dinosaur->inhabit}}</p>
 
@@ -45,7 +45,7 @@
             <p><b>Reproducción:</b>{{$dinosaur->reproduction}}</p>
             <p><b>Región:</b>{{$dinosaur->region}}</p>
             </td>
-            <td>Ver | Editar | Eliminar</td>
+            
         
         @empty
             <h1>La tabla no tiene datos</h1>

@@ -38,7 +38,7 @@ class DinosaurController extends Controller
     {
         $dinosaurs = request()->except('_token');
         Dinosaur::insert($dinosaurs);
-        return view('dinosaurs.index');
+        return redirect()->to(url('/dinosaurs'));
     }
 
     /**
@@ -60,7 +60,7 @@ class DinosaurController extends Controller
      */
     public function edit(Dinosaur $dinosaur)
     {
-        //
+        return view('dinosaurs.edit', compact('dinosaur'));
     }
 
     /**
@@ -72,7 +72,9 @@ class DinosaurController extends Controller
      */
     public function update(Request $request, Dinosaur $dinosaur)
     {
-        //
+        $data =request()->except('_token');
+        $dinosaur ->update($data);
+        return redirect()->to(url('/dinosaurs'));
     }
 
     /**
@@ -83,6 +85,7 @@ class DinosaurController extends Controller
      */
     public function destroy(Dinosaur $dinosaur)
     {
-        //
+        $dinosaur->delete();
+        return \redirect()->to(url('/dinosaurs'));
     }
 }

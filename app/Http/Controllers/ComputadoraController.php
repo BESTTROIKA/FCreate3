@@ -38,7 +38,7 @@ class ComputadoraController extends Controller
     {
         $computers = request()->except('_token');
         Computadora::insert($computers);
-        return view('computers.index');
+        return redirect()->to(url('/computadoras'));
     }
 
     /**
@@ -60,7 +60,7 @@ class ComputadoraController extends Controller
      */
     public function edit(Computadora $computadora)
     {
-        //
+        return view('computers.edit', compact('computadora'));
     }
 
     /**
@@ -72,7 +72,9 @@ class ComputadoraController extends Controller
      */
     public function update(Request $request, Computadora $computadora)
     {
-        //
+        $data =request()->except('_token');
+        $computadora ->update($data);
+        return redirect()->to(url('/computadoras'));
     }
 
     /**
@@ -83,6 +85,7 @@ class ComputadoraController extends Controller
      */
     public function destroy(Computadora $computadora)
     {
-        //
+        $computadora->delete();
+        return redirect()->to(url('/computadoras'));
     }
 }

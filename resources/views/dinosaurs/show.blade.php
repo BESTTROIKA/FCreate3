@@ -31,7 +31,7 @@
                 <td> 
                     <p>Imagen</p>
                 <td>
-                    <p><b>Peso:</b>{{$dinosaur->wieght}}</p>
+                    <p><b>Peso:</b>{{$dinosaur->weight}}</p>
                     <p><b>Tamaño:</b>{{$dinosaur->size}} Metros</p>
                     <p><b>Habitad:</b>{{$dinosaur->inhabit}}</p>
                     </td>
@@ -47,10 +47,14 @@
     </div>
         <div class="carfoster">
             <div class="col">
-                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                <a class="btn btn-primary" href="{{route('dinosaurs.edit', $dinosaur->id)}}">Editar</a>      
-                                <a class="btn btn-danger" href="{{route('dinosaurs.destroy', $dinosaur->id)}}">Eliminar</a>      
-                            </div>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a class="btn btn-primary" href="{{route('dinosaurs.edit', $dinosaur->id)}}">Editar</a>
+
+                            <form action="{{route('dinosaurs.destroy', $dinosaur->id)}}" method="post">
+                                @csrf 
+                                @method('DELETE')
+                                <input class="btn btn-danger" type="submit" value="Eliminar">
+                            </form>                                  
                         </div>
             </div>
     </div>

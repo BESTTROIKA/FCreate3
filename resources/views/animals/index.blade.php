@@ -6,7 +6,7 @@
     <div class="card-header">
     <div class="row">
     <div class="col-md-8">
-        <h2 class="card-title">Personas</h5>
+        <h2 class="card-title">Animales</h5>
         </div>
         <div class="col-md-4">
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
@@ -23,7 +23,7 @@
             <th>Nombre</th>
             <th>Información</th>
             <th>Descripción</th>
-            <th>Acciones</th>
+           
         </tr>
     </thead>
     <tbody>
@@ -41,10 +41,10 @@
             </td>
             <td><p><b>Color:</b>{{$animal->color}}</p>
             <p><b>Habitad:</b>{{$animal->inhabit}}</p>
-            <p><b>Nacionalidad:</b>{{$animal->nacionality}}</p>
+            <p><b>Nacionalidad:</b>{{$animal->country}}</p>
             <p><b>Alimentación:</b>{{$animal->feeding}}</p>
             </td>
-            <td>Ver | Editar | Eliminar</td>
+            
         
         @empty
             <h1>La tabla no tiene datos</h1>

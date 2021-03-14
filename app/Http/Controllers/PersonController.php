@@ -38,7 +38,7 @@ class PersonController extends Controller
     {
         $persons = request()->except('_token');
         Person::insert($persons);
-        return view('persons.index');
+        return redirect()->to(url('/persons'));
     }
 
     /**
@@ -60,7 +60,7 @@ class PersonController extends Controller
      */
     public function edit(Person $person)
     {
-        //
+        return view('persons.edit', compact('person'));
     }
 
     /**
@@ -72,7 +72,9 @@ class PersonController extends Controller
      */
     public function update(Request $request, Person $person)
     {
-        //
+        $data =request()->except('_token');
+        $person ->update($data);
+        return redirect()->to(url('/persons'));
     }
 
     /**
@@ -83,6 +85,7 @@ class PersonController extends Controller
      */
     public function destroy(Person $person)
     {
-        //
+        $person->delete();
+        return redirect()->to(url('/persons'));
     }
 }

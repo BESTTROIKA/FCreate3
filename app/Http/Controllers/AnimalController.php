@@ -38,7 +38,7 @@ class AnimalController extends Controller
     {
         $animals = request()->except('_token');
         Animal::insert($animals);
-        return view('animals.index');
+        return redirect()->to(url('/animals'));
     }
 
     /**
@@ -60,7 +60,7 @@ class AnimalController extends Controller
      */
     public function edit(Animal $animal)
     {
-        //
+        return view('animals.edit', compact('animal'));
     }
 
     /**
@@ -72,7 +72,9 @@ class AnimalController extends Controller
      */
     public function update(Request $request, Animal $animal)
     {
-        //
+        $data =request()->except('_token');
+        $animal ->update($data);
+        return redirect()->to(url('/animals'));
     }
 
     /**
@@ -83,6 +85,7 @@ class AnimalController extends Controller
      */
     public function destroy(Animal $animal)
     {
-        //
+        $animal->delete();
+        return redirect()->to(url('/animals'));
     }
 }
